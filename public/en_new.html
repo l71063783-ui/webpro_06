@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>英和辞典 - 新規登録</title>
+    <style>
+        label { display: inline-block; width: 150px; margin-bottom: 10px; }
+        input[type="text"], textarea { width: 300px; }
+    </style>
+</head>
+<body>
+    <h2>新しい単語の登録</h2>
+    <form action="/en" method="POST">
+        <div>
+            <label for="word">単語 (word):</label>
+            <input type="text" id="word" name="word" required>
+        </div>
+        <div>
+            <label for="part_of_speech">品詞 (part_of_speech):</label>
+            <input type="text" id="part_of_speech" name="part_of_speech" required>
+        </div>
+        <div>
+            <label for="simple_meaning">簡略な意味:</label>
+            <input type="text" id="simple_meaning" name="simple_meaning" required>
+        </div>
+        <div>
+            <label for="complex_meaning">詳細な意味:</label><br>
+            <textarea id="complex_meaning" name="complex_meaning" rows="4"></textarea>
+        </div>
+        <div>
+            <label for="examples">例文 (examples):</label><br>
+            <textarea id="examples" name="examples" rows="4"></textarea>
+        </div>
+        
+        <br>
+        <input type="submit" value="登録">
+    </form>
+    <br>
+    <a href="/en">一覧に戻る</a>
+</body>
+</html>

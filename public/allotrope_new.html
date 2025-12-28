@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>同素体 - 新規登録</title>
+    <style>
+        label { display: inline-block; width: 150px; margin-bottom: 10px; }
+        input[type="text"], input[type="number"], textarea { width: 300px; }
+    </style>
+</head>
+<body>
+    <h2>新しい同素体の登録</h2>
+    <form action="/allotrope" method="POST">
+        <div>
+            <label for="name">名称:</label>
+            <input type="text" id="name" name="name" placeholder="例: ダイヤモンド" required>
+        </div>
+        <div>
+            <label for="atomic_num">原子番号:</label>
+            <input type="number" id="atomic_num" name="atomic_num" placeholder="例: 6" required>
+        </div>
+        <div>
+            <label for="structure">構造:</label>
+            <input type="text" id="structure" name="structure" placeholder="例: 共有結合結晶" required>
+        </div>
+        <div>
+            <label for="note">備考（性質など）:</label><br>
+            <textarea id="note" name="note" rows="4" placeholder="例: 極めて硬く、電気を通さない。"></textarea>
+        </div>
+        
+        <br>
+        <input type="submit" value="登録">
+    </form>
+    <br>
+    <a href="/allotrope">一覧に戻る</a>
+</body>
+</html>

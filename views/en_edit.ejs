@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.word %></title>
+</head>
+<body>
+  <h2>単語データの編集</h2>
+  <form action="/en/update/<%= id %>" method="POST">
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>データ</th>
+      </tr>
+      <tr>
+        <td>ID (表示のみ)</td>
+        <td><input type="text" name="id" value="<%= data.id %>" disabled></td>
+      </tr>
+      <tr>
+        <td>単語 (word)</td>
+        <td><input type="text" name="word" value="<%= data.word %>"></td>
+      </tr>
+      <tr>
+        <td>品詞 (part_of_speech)</td>
+        <td><input type="text" name="part_of_speech" value="<%= data.part_of_speech %>"></td>
+      </tr>
+      <tr>
+        <td>簡略な意味 (simple_meaning)</td>
+        <td><input type="text" name="simple_meaning" value="<%= data.simple_meaning %>"></td>
+      </tr>
+      <tr>
+        <td>詳細な意味 (complex_meaning)</td>
+        <td><textarea name="complex_meaning" rows="4" cols="40"><%= data.complex_meaning %></textarea></td>
+      </tr>
+      <tr>
+        <td>例文 (examples)</td>
+        <td><textarea name="examples" rows="4" cols="40"><%= data.examples %></textarea></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="更新する">
+  </form>
+  <br>
+  <a href="/en">単語一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!Doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の詳細</title>
+</head>
+<body>
+  <h2><%= data.name %>の詳細</h2>
+  <table border="1">
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>名称</td><td><%= data.name %></td></tr>
+    <tr><td>原子番号</td><td><%= data.atomic_num %></td></tr>
+    <tr><td>構造</td><td><%= data.structure %></td></tr>
+    <tr><td>備考（性質など）</td><td><%= data.note %></td></tr>
+  </table>
+
+  <br>
+  <p>
+    <a href="/allotrope/edit/<%= id %>">編集</a>
+  </p>
+  <p>
+    <a href="/allotrope/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')" style="color: red;">削除</a>
+  </p>
+  
+  <hr>
+  <a href="/allotrope">一覧に戻る</a>
+</body>
+</html>

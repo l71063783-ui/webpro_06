@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>同素体一覧</title>
+</head>
+<body>
+  <h2>同素体一覧</h2>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>名称</th>
+      <th>原子番号</th>
+      <th>構造</th>
+    </tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td> 
+          <td>
+            <a href="/allotrope/<%= number %>"><%= row.name %></a>
+          </td>
+          <td><%= row.atomic_num %></td>
+          <td><%= row.structure %></td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br>
+  <a href="/allotrope/create">新規追加</a>
+</body>
+</html>

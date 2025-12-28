@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.title %></title>
+</head>
+<body>
+  <h2>本データの編集</h2>
+  <form action="/book/update/<%= id %>" method="POST">
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>データ</th>
+      </tr>
+      <tr>
+        <td>ID (表示のみ)</td>
+        <td><input type="text" name="id" value="<%= data.id %>" disabled></td>
+      </tr>
+      <tr>
+        <td>タイトル</td>
+        <td><input type="text" name="title" value="<%= data.title %>"></td>
+      </tr>
+      <tr>
+        <td>著者 </td>
+        <td><input type="text" name="auther" value="<%= data.auther %>"></td>
+      </tr>
+      <tr>
+        <td>ジャンル </td>
+        <td><input type="text" name="genre" value="<%= data.genre %>"></td>
+      </tr>
+      <tr>
+        <td>発行日</td>
+        <td><input type="text" name="date" value="<%= data.date %>"></td>
+      </tr>
+      <tr>
+        <td>発行元</td>
+        <td><input type="text" name="publisher" value="<%= data.publisher %>"></td>
+      </tr>
+      <tr>
+        <td>メモ</td>
+        <td><textarea name="review" rows="4" cols="40"><%= data.review %></textarea></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="更新する">
+  </form>
+  <br>
+  <a href="/book">本棚に戻る</a>
+</body>
+</html>

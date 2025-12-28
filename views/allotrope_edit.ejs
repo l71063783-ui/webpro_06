@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.name %></title>
+</head>
+<body>
+  <h2>同素体データの編集</h2>
+  <form action="/allotrope/update/<%= id %>" method="POST">
+    <table border="1">
+      <tr>
+        <th>項目</th>
+        <th>データ</th>
+      </tr>
+      <tr>
+        <td>ID (表示のみ)</td>
+        <td><input type="text" name="id" value="<%= data.id %>" disabled></td>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td><input type="text" name="name" value="<%= data.name %>"></td>
+      </tr>
+      <tr>
+        <td>原子番号</td>
+        <td><input type="number" name="atomic_num" value="<%= data.atomic_num %>"></td>
+      </tr>
+      <tr>
+        <td>構造</td>
+        <td><input type="text" name="structure" value="<%= data.structure %>"></td>
+      </tr>
+      <tr>
+        <td>備考（性質など）</td>
+        <td><textarea name="note" rows="4" cols="40"><%= data.note %></textarea></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="更新する">
+  </form>
+  <br>
+  <a href="/allotrope">一覧に戻る</a>
+</body>
+</html>

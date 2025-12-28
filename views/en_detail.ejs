@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.word %>の詳細</title>
+</head>
+<body>
+  <h2><%= data.word %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>スペル</td><td><%= data.word %></td></tr>
+    <tr><td>意味</td><td><%= data.complex_meaning %></td></tr>
+    <tr><td>例文</td><td><%= data.examples %></td></tr>
+  </table>
+
+  <br>
+  <p>
+    <a href="/en/edit/<%= id %>">この単語を編集する</a>
+  </p>
+  <p>
+    <a href="/en/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')" style="color: red;">この単語を削除する</a>
+  </p>
+  
+  <hr>
+  <a href="/en">駅一覧に戻る</a>
+</body>
+</html>
